@@ -1,0 +1,16 @@
+{
+    "root": "build/",
+    "routes": {
+      "/": "index.html",
+      "/signup": "index.html",
+      "/setPassword": "index.html",
+      "/homepage": "index.html",
+      "/loanappform": "index.html",
+      "/verifiersignin": "index.html",
+      "/verifierhomepage": "index.html",
+      "/adminsignin": "index.html",
+      "/adminhomepage": "index.html",
+      "/**": "index.html"
+    }
+}
+  

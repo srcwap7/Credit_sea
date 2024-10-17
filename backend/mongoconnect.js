@@ -3,7 +3,7 @@ const User = require('./schema/user-model');
 
 let isConnected = false;
 
-mongoose.connect("mongodb+srv://arpangoswami462:arpangoswami462@cluster1.80v4a.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1", {
+mongoose.connect("mongodb+srv://arpangoswami462:arpangoswami462@cluster1.80v4a.mongodb.net/alumnet_central?retryWrites=true&w=majority&appName=Cluster1", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

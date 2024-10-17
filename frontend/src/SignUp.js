@@ -27,7 +27,7 @@ const SignupForm = () => {
     setSuccess(null); // Clear previous messages
 
     try {
-      const response = await fetch('http://localhost:5000/sendEmail', {
+      const response = await fetch('https://credit-sea.onrender.com/sendEmail', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ to: formData.email }),
@@ -50,7 +50,7 @@ const SignupForm = () => {
   const handleVerifyOtp = async () => {
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/verifyToken', {
+      const response = await fetch('https://credit-sea.onrender.com/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: formData.email, token: otp }),

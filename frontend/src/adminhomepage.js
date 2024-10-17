@@ -28,7 +28,7 @@ const AdminHomePage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/adminhomepage', {
+        const response = await fetch('https://credit-sea.onrender.com/adminhomepage', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ adminId }),
@@ -67,7 +67,7 @@ const AdminHomePage = () => {
 
     setRemovalLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/removeverifier', {
+      const response = await fetch('https://credit-sea.onrender.com//removeverifier', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ verifierId: selectedVerifier[0] }),
@@ -104,7 +104,7 @@ const AdminHomePage = () => {
   // Submit form data to add verifier
   const handleSubmit = async () => {
     try {
-      const response = await fetch('http://localhost:5000/addverifier', {
+      const response = await fetch('https://credit-sea.onrender.com/addverifier', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

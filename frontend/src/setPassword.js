@@ -41,7 +41,7 @@ const SetPassword = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/completeProfile', {
+      const response = await fetch('https://credit-sea.onrender.com/completeProfile', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username:username,email:email,password:password }),

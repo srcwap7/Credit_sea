@@ -130,7 +130,7 @@ export default function SlotsSignIn() {
     const email = formData.get("email");
     const password = formData.get("password");
     
-    const response = await fetch("http://localhost:5000/login",{
+    const response = await fetch("https://credit-sea.onrender.com/login",{
       method: 'POST',
       headers:{ 'Content-Type': 'application/json' },
       body: JSON.stringify({email:email,password:password}),
@@ -151,7 +151,7 @@ export default function SlotsSignIn() {
 
   const handleGoogleAuthorization = ()=>{
     console.log("Touched");
-    fetch("http://localhost:5000/auth/google",{
+    fetch("https://credit-sea.onrender.com/auth/google",{
       method:"GET"
     });
   }
@@ -175,15 +175,6 @@ export default function SlotsSignIn() {
       </AppProvider>
 
       OR 
-      
-      <Box onClick={handleGoogleAuthorization} style={{display:'flex',flexDirection:'row',justifyContent:'center',alignItems:'center',backgroundColor:'#000000DE'}}>
-        <Icon style={{ width:25, height:25 }} /> 
-        <Button style={{color:'white'}}> Sign In with Google</Button>
-      </Box>
-
-
-
-      OR
 
       <Button
         variant="contained"

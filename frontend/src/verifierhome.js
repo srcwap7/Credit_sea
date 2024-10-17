@@ -33,7 +33,7 @@ const VerifierHomePage = () => {
   };
 
   const handleLoanAction = async (action) => {
-    const apiUrl = `http://localhost:5000/${action}loan`; // Dynamic endpoint
+    const apiUrl = `https://credit-sea.onrender.com/${action}loan`; // Dynamic endpoint
     try {
       const response = await fetch(apiUrl, {
         method: 'POST',
@@ -56,7 +56,7 @@ const VerifierHomePage = () => {
   useEffect(() => {
     const fetchLoans = async () => {
       try {
-        const response = await fetch("http://localhost:5000/verifierhomepage",{
+        const response = await fetch("https://credit-sea.onrender.com/verifierhomepage",{
             method:'POST',
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({verifierId:verifierId})

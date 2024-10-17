@@ -117,7 +117,7 @@ export default function SlotsSignIn() {
     console.log(email);
     console.log(password);
     
-    const response = await fetch("http://localhost:5000/loginadmin",{
+    const response = await fetch("https://credit-sea.onrender.com/loginadmin",{
       method: 'POST',
       headers:{ 'Content-Type': 'application/json' },
       body: JSON.stringify({email:email,password:password}),

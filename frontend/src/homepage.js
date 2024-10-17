@@ -51,7 +51,7 @@ function HomePage() {
   const handleSubmit = async(e) => {
      e.preventDefault();
      console.log(userId);
-     const response = await fetch('http://localhost:5000/applyforloan',{
+     const response = await fetch('https://credit-sea.onrender.com/applyforloan',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify({fullname:formData.fullname,amount:formData.amount,tenure:formData.tenure,empstatus:formData.empstatus,empaddress:formData.empaddress,purpose:formData.purpose,applicantId:userId})
@@ -68,7 +68,7 @@ function HomePage() {
   useEffect(() => {
     const fetchLoanDetails = async () => {
       try {
-        const response = await fetch("http://localhost:5000/gethomepage", {
+        const response = await fetch("https://credit-sea.onrender.com/gethomepage", {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ userId: userId })

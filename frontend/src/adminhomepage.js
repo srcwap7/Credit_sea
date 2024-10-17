@@ -67,7 +67,7 @@ const AdminHomePage = () => {
 
     setRemovalLoading(true);
     try {
-      const response = await fetch('https://credit-sea.onrender.com//removeverifier', {
+      const response = await fetch('https://credit-sea.onrender.com/removeverifier', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ verifierId: selectedVerifier[0] }),

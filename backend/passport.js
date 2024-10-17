@@ -4,12 +4,14 @@ const isConnected = require('./mongoconnect');
 const User = require('./schema/user-model');
 const jwt = require('jsonwebtoken');
 
+require('dotenv').config({path:'./config.env'});
+
 const jwtSecret = "secured_hash_begin_coromandel_12841_howrah_to_chennai_end_hash_secured"
 
 passport.use(
   new GoogleStrategy({
-      clientID:"917925671842-snhg5snda56mjqds5ufggqpd148usang.apps.googleusercontent.com",
-      clientSecret:"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",
+      clientID:process.env.SHAKTI_CLIENT_ID,
+      clientSecret:process.env.SHAKTI_CLIENT_SECRET,
       callbackURL: 'http://localhost:5000/auth/googlesignin',
     },
     async (accessToken, refreshToken, profile, done) => {

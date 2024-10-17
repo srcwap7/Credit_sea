@@ -50,7 +50,7 @@ const SignupForm = () => {
   const handleVerifyOtp = async () => {
     setLoading(true);
     try {
-      const response = await fetch('https://credit-sea.onrender.com/', {
+      const response = await fetch('https://credit-sea.onrender.com/verifyToken', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: formData.email, token: otp }),

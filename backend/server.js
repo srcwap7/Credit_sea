@@ -16,8 +16,6 @@ require('dotenv').config({path:'./config.env'});
 const OAuth2 = google.auth.OAuth2;
 const app=express();
 
-const port=5000;
-
 
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
@@ -471,6 +469,6 @@ app.post("/adminhomepage",async(req,res)=>{
   }
 })
 
-app.listen(port,()=>{
+app.listen(process.env.port,()=>{
     console.log("server is running");
 })

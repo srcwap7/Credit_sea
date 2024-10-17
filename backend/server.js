@@ -13,7 +13,7 @@ const Admin = require('./schema/admin-model.js')
 
 require('dotenv').config({path:'./config.env'});
 
-const OAuth2 = google.auth.OAuth2;
+const port =  process.env.PORT || 5000;
 const app=express();
 
 
@@ -469,6 +469,6 @@ app.post("/adminhomepage",async(req,res)=>{
   }
 })
 
-app.listen(process.env.port,()=>{
+app.listen(PORT,()=>{
     console.log("server is running");
 })

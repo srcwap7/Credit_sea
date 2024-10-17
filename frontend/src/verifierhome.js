@@ -41,7 +41,6 @@ const VerifierHomePage = () => {
         body: JSON.stringify({ applicationId: selectedLoan._id }),
       });
       if (response.ok) {
-        const data = await response.json();
         alert(`${action.charAt(0).toUpperCase() + action.slice(1)} successful!`);
         closeModal();
         window.location.reload();

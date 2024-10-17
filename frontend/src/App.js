@@ -14,8 +14,6 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { AppProvider, SignInPage } from '@toolpad/core';
 import { useTheme } from '@mui/material/styles';
-import { ReactComponent as Icon } from './icon.svg';
-import Box from '@mui/material/Box';
 import { useNavigate } from 'react-router-dom';
 import LoginIcon from '@mui/icons-material/Login';
 
@@ -149,12 +147,6 @@ export default function SlotsSignIn() {
     }
   }
 
-  const handleGoogleAuthorization = ()=>{
-    console.log("Touched");
-    fetch("https://credit-sea.onrender.com/auth/google",{
-      method:"GET"
-    });
-  }
 
   return (
     <div style={{display:'flex',flexDirection:'column',gap:'20px',padding:'20px',justifyContent:'center',alignItems:'center'}}>

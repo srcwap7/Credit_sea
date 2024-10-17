@@ -6,7 +6,6 @@ import {
   OutlinedInput,
   TextField,
   InputAdornment,
-  Link,
   IconButton,
 } from '@mui/material';
 import AccountCircle from '@mui/icons-material/AccountCircle';
@@ -14,10 +13,7 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { AppProvider, SignInPage } from '@toolpad/core';
 import { useTheme } from '@mui/material/styles';
-import { ReactComponent as Icon } from './icon.svg';
-import Box from '@mui/material/Box';
 import { useNavigate } from 'react-router-dom';
-import LoginIcon from '@mui/icons-material/Login';
 
 
 const providers = [{ id: 'credentials', name: 'Email and Password'}];

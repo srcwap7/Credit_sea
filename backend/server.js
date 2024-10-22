@@ -74,7 +74,7 @@ app.post("/sendEmail",async(req,res)=>{
   }
   catch(error){
     console.log(error);
-    res.status(500).json({message:"Failed to send email"});
+    res.status(500).json({message:error});
   }
 });
 

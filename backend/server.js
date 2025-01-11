@@ -39,6 +39,7 @@ app.get('/',(req,res)=>{
 })
 
 app.post("/sendEmail",async(req,res)=>{
+  console.log("Received API request to send email");
   const { to } = req.body;
   if (!to) {
     return res.status(400).json({ error: "Missing required fields: 'to'" });
@@ -89,7 +90,7 @@ app.post("/verifyToken",async(req,res)=>{
     res.status(200).json("Good To Go!");
   }
   else{
-    res.status(201).json("OTP Not matched");
+    res.status(500).json("OTP Not matched");
   }
 })
 
@@ -129,8 +130,8 @@ app.post("/login",async(req,res)=>{
       });
     }
     else{
-      console.log("Invalid Credentials!");
-      res.status(201).json({message:"Bad Credentials"});
+      console.log("Invalid Credentials Try Again!");
+      res.status(500).json({message:"Bad Credentials"});
     }
   }
   catch(error){
@@ -140,7 +141,7 @@ app.post("/login",async(req,res)=>{
 
 app.post("/gethomepage",async(req,res)=>{
   const {userId} = req.body;
-  if (!userId) res.status(201).json({message:"Invalid Credentials"});
+  if (!userId) res.status(500).json({message:"Invalid Credentials"});
   else{
     try{
       const user = await User.findOne({_id:userId});
@@ -153,7 +154,7 @@ app.post("/gethomepage",async(req,res)=>{
         }
         res.status(200).json({message:"Ok",loanApplications:loanapplications});
       }
-      else res.status(201).json({message:"User Not Found"});
+      else res.status(500).json({message:"User Not Found"});
     }
     catch(error){
       res.status(500).json({message:"Unexpected Error"});
@@ -222,7 +223,7 @@ app.post("/viewapplication",async(req,res)=>{
     if (application){
       res.status(200).json({message:application});
     }
-    else res.status(201).json({message:"Not Found"});
+    else res.status(500).json({message:"Not Found"});
   }
   catch(error){
     res.status(500).json({message:"Unexpected Error"});
